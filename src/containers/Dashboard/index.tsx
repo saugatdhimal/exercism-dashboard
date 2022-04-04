@@ -27,7 +27,7 @@ const Dashboard = () => {
             className='w-[55px] h-[61px] mt-[41px]'
           />
           <div className='flex flex-row items-center mt-[13px] mb-5'>
-            <h1 className='font-bold text-[31.25px]'>
+            <h1 className='font-bold text-[31.25px] text-[red]'>
               {'Testimonials I\'ve left'}
             </h1>
             <p className='min-w-[40px] text-sm text-center text-color-secondary font-medium px-2 py-0.5 border border-color-lt-grey rounded-2xl h-fit ml-3.5'>
