@@ -1,7 +1,5 @@
 {
   "projects": {
-    "default": "exercism-dashboard",
-    "develop": "exercism-dashboard"
-  },
-  "targets": {}
+    "default": "exercism-dashboard"
+  }
 }
