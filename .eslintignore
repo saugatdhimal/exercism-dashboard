@@ -1,0 +1,6 @@
+**/*.css
+*.svg
+**/images
+config-overrides.js
+node_modules
+build

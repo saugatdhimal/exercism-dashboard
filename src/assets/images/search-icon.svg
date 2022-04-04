@@ -1,0 +1,19 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 20010904//EN"
+ "http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
+<svg version="1.0" xmlns="http://www.w3.org/2000/svg"
+ width="87.000000pt" height="90.000000pt" viewBox="0 0 87.000000 90.000000"
+ preserveAspectRatio="xMidYMid meet">
+<metadata>
+Exercism Search Icon
+</metadata>
+<g transform="translate(0.000000,90.000000) scale(0.100000,-0.100000)"
+fill="#5C5589" stroke="none">
+<path d="M282 812 c-220 -79 -281 -355 -115 -524 63 -64 127 -90 221 -90 66 0
+83 4 142 34 l68 35 108 -108 c60 -60 113 -108 119 -106 32 11 11 45 -90 147
+l-107 107 25 39 c38 60 50 109 45 188 -8 116 -70 210 -173 263 -68 35 -169 41
+-243 15z m203 -49 c72 -24 139 -95 161 -169 32 -110 4 -207 -82 -283 -84 -73
+-186 -88 -292 -41 -56 25 -86 52 -117 105 -88 149 -24 329 140 392 44 17 134
+15 190 -4z"/>
+</g>
+</svg>

@@ -1,0 +1,25 @@
+module.exports = {
+  content: ['./src/**/*.{js,jsx,ts,tsx}'],
+  theme: {
+    extend: {},
+    colors: {
+      transparent: 'transparent',
+      current: 'currentColor',
+      'color-white': '#FFFFFF',
+      'color-primary': '#130B43',
+      'color-secondary': '#5C5589',
+      'color-alert': '#D85050',
+      'color-alt': '#3F3A5A',
+      'color-border': '#C8D5EF',
+      'color-border-alt': '#EAECF3',
+      'color-lt-orange': '#FFF4E3',
+      'color-grey': '#F0F3F9',
+      'color-lt-grey': '#D5D8E4',
+      'color-lt-bg': '#F4F7FD',
+      'color-tertiary': '#76709F',
+      'color-lt': '#E0E0ED',
+      'color-lt-blue': '#E1EBFF',
+    },
+  },
+  plugins: [],
+};
