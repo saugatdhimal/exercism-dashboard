@@ -34,60 +34,64 @@ export const Pagination: React.FC<Props> = ({
   page,
   totalPages,
   handlePagination,
-}) => (
-  <div
-    className='flex justify-between gap-[20px] w-full pt-[17px] pb-[14px] px-[32px]'
-    data-testid='pagination'
-  >
-    <div>
-      <Button
-        btnType='previous'
-        disabled={page <= 1}
-        onClick={() => handlePagination(page - 1)}
-      />
-    </div>
-    <div className='flex gap-[12px]'>
-      {totalPages > 0 && (
-        <NumBtn
-          onClick={() => handlePagination(1)}
-          num={1}
-          isActive={page === 1}
+}) => {
+  const handlePrevious = useCallback(() => {
+    handlePagination(page - 1);
+  }, [handlePagination, page]);
+
+  const handleNext = useCallback(() => {
+    handlePagination(page + 1);
+  }, [handlePagination, page]);
+
+  return (
+    <div
+      className='flex justify-between gap-[20px] w-full pt-[17px] pb-[14px] px-[32px]'
+      data-testid='pagination'
+    >
+      <div>
+        <Button
+          btnType='previous'
+          disabled={page <= 1}
+          onClick={handlePrevious}
         />
-      )}
-      {page > 3 && <div className='flex items-center'>...</div>}
-      {page === totalPages && totalPages > 3 && (
-        <NumBtn onClick={() => handlePagination(page - 2)} num={page - 2} />
-      )}
-      {page > 2 && (
-        <NumBtn onClick={() => handlePagination(page - 1)} num={page - 1} />
-      )}
-      {page !== 1 && page !== totalPages && (
-        <NumBtn onClick={() => handlePagination(page)} num={page} isActive />
-      )}
-      {page < totalPages - 1 && (
-        <NumBtn onClick={() => handlePagination(page + 1)} num={page + 1} />
-      )}
-      {page === 1 && totalPages > 3 && (
-        <NumBtn onClick={() => handlePagination(page + 2)} num={page + 2} />
-      )}
-      {page < totalPages - 2 && <div className='flex items-center'>...</div>}
-      {totalPages > 1 && (
-        <NumBtn
-          onClick={() => handlePagination(totalPages)}
-          num={totalPages}
-          isActive={page === totalPages}
+      </div>
+      <div className='flex gap-[12px]'>
+        {totalPages > 0 && (
+          <NumBtn onClick={handlePagination} num={1} isActive={page === 1} />
+        )}
+        {page > 3 && <div className='flex items-center'>...</div>}
+        {page === totalPages && totalPages > 3 && (
+          <NumBtn onClick={handlePagination} num={page - 2} />
+        )}
+        {page > 2 && <NumBtn onClick={handlePagination} num={page - 1} />}
+        {page !== 1 && page !== totalPages && (
+          <NumBtn onClick={handlePagination} num={page} isActive />
+        )}
+        {page < totalPages - 1 && (
+          <NumBtn onClick={handlePagination} num={page + 1} />
+        )}
+        {page === 1 && totalPages > 3 && (
+          <NumBtn onClick={handlePagination} num={page + 2} />
+        )}
+        {page < totalPages - 2 && <div className='flex items-center'>...</div>}
+        {totalPages > 1 && (
+          <NumBtn
+            onClick={handlePagination}
+            num={totalPages}
+            isActive={page === totalPages}
+          />
+        )}
+      </div>
+      <div>
+        <Button
+          btnType='next'
+          disabled={page >= totalPages}
+          onClick={handleNext}
         />
-      )}
+      </div>
     </div>
-    <div>
-      <Button
-        btnType='next'
-        disabled={page >= totalPages}
-        onClick={() => handlePagination(page + 1)}
-      />
-    </div>
-  </div>
-);
+  );
+};
 
 const PaginationFooter: React.FC<StoreProps> = ({
   getTestimonials,

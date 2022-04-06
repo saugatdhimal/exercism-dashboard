@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useCallback} from 'react';
 
 import arrowback from '@images/arrow-back.svg';
 import arrowForward from '@images/arrow-forward.svg';
@@ -11,7 +11,7 @@ interface Props {
 
 interface NumBtnProps {
   isActive?: boolean;
-  onClick(): void;
+  onClick(num: number): void;
   num: number;
 }
 
@@ -52,17 +52,23 @@ export const NumBtn: React.FC<NumBtnProps> = ({
   isActive = false,
   onClick,
   num,
-}) => (
-  <button
-    type='button'
-    onClick={onClick}
-    className={`${
-      isActive ? activeNumBtnClass : inactiveNumBtnClass
-    } py-[8px] px-[16px] rounded-[5px] border-[1px] font-medium text-sm`}
-    data-testid='numBtn'
-  >
-    {num}
-  </button>
-);
+}) => {
+  const handleClick = useCallback(() => {
+    onClick(num);
+  }, [num, onClick]);
+
+  return (
+    <button
+      type='button'
+      onClick={handleClick}
+      className={`${
+        isActive ? activeNumBtnClass : inactiveNumBtnClass
+      } py-[8px] px-[16px] rounded-[5px] border-[1px] font-medium text-sm`}
+      data-testid='numBtn'
+    >
+      {num}
+    </button>
+  );
+};
 
 export default Button;
